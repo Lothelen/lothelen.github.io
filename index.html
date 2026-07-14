@@ -32,15 +32,25 @@
       letter-spacing: 0.35em; text-transform: lowercase; color: #b7a9e6; }
     p.soon { margin-top: 3rem; font-size: 0.8rem; letter-spacing: 0.3em;
       text-transform: uppercase; color: #6b6390; }
+    h1 .tm {
+      -webkit-text-fill-color: #c9b8ff; color: #c9b8ff;
+      font-size: 0.28em; vertical-align: super; letter-spacing: 0;
+      margin-left: 0.08em; font-weight: 600;
+    }
+    footer { position: fixed; bottom: 1.2rem; left: 0; right: 0; z-index: 1;
+      text-align: center; font-size: 0.72rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: #5b5480; }
+    footer strong { color: #8f7bd6; font-weight: 600; }
   </style>
 </head>
 <body>
   <div class="stars" id="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <h1>Lothelen</h1>
+    <h1>Lothelen<span class="tm">&trade;</span></h1>
     <p class="tag">blossom of the stars</p>
     <p class="soon">coming soon</p>
   </div>
+  <footer>&copy; 2026 &middot; <strong>Lothelen&trade;</strong> is a trademark of Thomas&nbsp;S.&nbsp;Hansen</footer>
   <script>
     const s = document.getElementById('stars');
     for (let i = 0; i < 120; i++) {
