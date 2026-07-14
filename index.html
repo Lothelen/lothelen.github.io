@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lothelen</title>
+  <meta name="description" content="Lothelen — blossom of the stars." />
+  <style>
+    :root { color-scheme: dark; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: radial-gradient(ellipse at 50% 30%, #12122b 0%, #08081a 55%, #030309 100%);
+      color: #efe9ff;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .stars { position: fixed; inset: 0; z-index: 0; }
+    .stars span {
+      position: absolute; width: 2px; height: 2px; border-radius: 50%;
+      background: #fff; opacity: 0.7;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+    @keyframes twinkle { 0%,100% { opacity: 0.15; } 50% { opacity: 0.9; } }
+    .wrap { position: relative; z-index: 1; text-align: center; padding: 2rem; }
+    h1 {
+      font-size: clamp(3rem, 12vw, 8rem); font-weight: 400; letter-spacing: 0.12em;
+      margin: 0; background: linear-gradient(180deg, #fff 0%, #c9b8ff 60%, #8f7bd6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    p.tag { margin: 1.2rem 0 0; font-size: clamp(1rem, 3.5vw, 1.5rem);
+      letter-spacing: 0.35em; text-transform: lowercase; color: #b7a9e6; }
+    p.soon { margin-top: 3rem; font-size: 0.8rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: #6b6390; }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1>Lothelen</h1>
+    <p class="tag">blossom of the stars</p>
+    <p class="soon">coming soon</p>
+  </div>
+  <script>
+    const s = document.getElementById('stars');
+    for (let i = 0; i < 120; i++) {
+      const d = document.createElement('span');
+      d.style.left = Math.random() * 100 + 'vw';
+      d.style.top = Math.random() * 100 + 'vh';
+      d.style.animationDelay = (Math.random() * 4) + 's';
+      d.style.transform = 'scale(' + (0.5 + Math.random() * 1.5) + ')';
+      s.appendChild(d);
+    }
+  </script>
+</body>
+</html>
